@@ -10,7 +10,7 @@ const api = new Api();
 const DocumentsPage = () => {
   const [movable, setMovable] = useState(false);
   const [documentsListWidth, setDocumentsListWidth] = useState(300);
-
+  const [activeDocument, setActiveDocument] = useState("");
   const [documents, setDocuments] = useState();
 
   useEffect(() => {
@@ -30,8 +30,9 @@ const DocumentsPage = () => {
         items={documents}
         setMovable={(val) => setMovable(val)}
         listWidth={documentsListWidth}
+        setActiveDocument={(docId) => setActiveDocument(docId)}
       />
-      <Workbench file={null}/>
+      <Workbench file={activeDocument} />
     </div>
   );
 };

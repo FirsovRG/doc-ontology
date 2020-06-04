@@ -36,11 +36,13 @@
 }
 
 .logo {
-  height: 100%;
+  height: 6rem;
+  width: 6rem;
   margin-left: 2rem;
 }
 
 .logo img {
   height: inherit;
+  width: inherit;
   object-fit: contain;
 }

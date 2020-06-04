@@ -7,7 +7,7 @@ import { FileIcon } from "../icons/file";
 import cx from "classnames";
 import { useState } from "react";
 
-const DocumentsList = ({ items, setMovable, listWidth }) => {
+const DocumentsList = ({ items, setMovable, listWidth, setActiveDocument }) => {
   const [openedDirs, setOpenedDirs] = useState([]);
 
   const renderDoc = (doc) => {
@@ -47,7 +47,7 @@ const DocumentsList = ({ items, setMovable, listWidth }) => {
       );
     }
     return (
-      <li key={doc.uuid} className={styles.documentItem}>
+      <li key={doc.uuid} className={styles.documentItem} onClick={() => setActiveDocument(doc)}>
         <FileIcon /> {doc.name}
       </li>
     );

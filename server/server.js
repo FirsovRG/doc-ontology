@@ -3,6 +3,7 @@ const helpers = require("./helpers");
 const dirTree = require("directory-tree");
 
 const tree = dirTree(`${__dirname}/documents`);
+const docsHierarchy = tree.children.map(helpers.parseTree);
 
 const app = express();
 
@@ -16,8 +17,14 @@ app.use(function (req, res, next) {
 });
 
 app.get("/documents", function (request, response) {
-  const docsHierarchy = tree.children.map(helpers.parseTree);
   response.send(docsHierarchy);
+});
+
+app.get("/documents/:uuid", function (req, res) {
+  if (req.params.uuid) {
+    const targetPath = helpers.findDocInTree(docsHierarchy, req.params.uuid);
+    res.sendFile(`${targetPath.path}`);
+  }
 });
 
 app.listen(8080, function () {

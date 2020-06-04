@@ -7,9 +7,12 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "express": "^4.17.1",
+    "pdf-viewer-reactjs": "^2.0.6",
+    "pdfjs-dist": "^2.3.200",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-file-viewer": "^1.2.1",
+    "react-pdf": "^4.1.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1"
   },

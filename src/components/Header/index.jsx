@@ -14,10 +14,7 @@ const Header = () => (
         <NavLink to="/documents">Документы</NavLink>
       </li>
       <li>
-        <NavLink to="/route2">Route 2</NavLink>
-      </li>
-      <li>
-        <NavLink to="/route3">Route 3</NavLink>
+        <NavLink to="/route2">Личный кабинет</NavLink>
       </li>
     </ul>
   </header>
